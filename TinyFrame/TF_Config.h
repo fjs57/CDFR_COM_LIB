@@ -78,6 +78,7 @@ typedef uint8_t TF_COUNT;
 // defined in config implementations
 // --------->  defined in config implementations
 // #define TF_Error(format, ...) printf("[TF] " format "\n", ##__VA_ARGS__)
+ #define TF_Error(format, ...)
 
 
 //------------------------- End of user config ------------------------------
