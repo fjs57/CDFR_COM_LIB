@@ -1,5 +1,5 @@
-#define TF_TYPE_STEPPER_MCU_ID              0x00
-#define TF_TYPE_STEPPER_MCU_STATUS          0x01
+#define TF_TYPE_MCU_ID                      0x00
+#define TF_TYPE_MCU_STATUS                  0x01
 
 #define TF_TYPE_SAFETY_WATCHDOG_PING        0x08
 #define TF_TYPE_SAFETY_WATCHDOG_CONFIG      0x09
