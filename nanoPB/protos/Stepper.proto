@@ -1,0 +1,52 @@
+syntax = "proto2";
+
+enum StepperErrorCode {
+    NO_ERROR = 0;
+    GENERIC_ERROR = 1;
+}
+
+enum StepperControlModes {
+    INHIBITED = 0;
+    SPEED = 1;
+    POSITION = 2;
+    GANTRY = 3;
+}
+
+message StepperEnable {
+    required bool enable                            = 1;
+}
+
+message StepperMode {
+    required StepperControlModes control_mode       = 1;
+    required bool force                             = 2;
+}
+
+message StepperTelemetry {
+    required bool stallguard_state                  = 1;
+}
+
+message StepperSpeed {
+    required float speed                            = 1;
+}
+
+message StepperPosition {
+    required double position                        = 1;
+}
+
+message StepperConfig {
+    required uint32 update_period                   = 1;
+    required float acceleration                     = 2;
+    required float max_speed                        = 3;
+    required double min_position                    = 4;
+    required double max_position                    = 5;
+    required bool enable_position_limits            = 6;
+    required float current                          = 7;
+    required bool enable_watchdog_activation        = 8;
+    required uint32 enable_watchdog_timeout         = 9;
+}
+
+message StepperStatus {
+    required StepperErrorCode error_code                    = 1;
+    required uint32 enable_watchdog_last_ping_timestamp     = 2;
+    required bool enable_watchdog_state                     = 3;
+}

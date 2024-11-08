@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+message DigitalOutputStates {
+    repeated bool states                    = 1;
+}
+
+message DigitalInputStates {
+    repeated bool states                    = 1;
+}
+
+message AnalogInputStates {
+    repeated float states                   = 1;
+    required bool hysteresis_state          = 2;
+}
+
+message DigitalInputConfig {
+    required bool send_periodically_states  = 1;
+    required uint32 send_period             = 2;
+    repeated bool send_on_change            = 3;
+}
+
+message AnalogInputConfig {
+    required bool send_periodically_states  = 1;
+    required uint32 send_period             = 2;
+
+    repeated float offset                   = 3;
+    repeated float scale                    = 4;
+
+    repeated bool send_hysteresis_state     = 5;
+    repeated float hysteresis_high          = 6;
+    repeated float hysteresis_low           = 7;
+}

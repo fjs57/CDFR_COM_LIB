@@ -1,0 +1,2 @@
+ServoStatus.positions       max_count:4
+ServoStatus.positions       fixed_count:true

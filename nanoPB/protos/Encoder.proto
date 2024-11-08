@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+enum EncoderErrorCode {
+    NO_ERROR = 0;
+    GENERIC_ERROR = 1;
+}
+
+enum EncoderEvent {
+    NO_EVENT = 0;
+    HIGH_LIMIT = 1;
+    LOW_LIMIT = 2;
+    ZERO_CROSS = 3;
+}
+
+message EncoderState {
+    required double continuous_position     = 1;
+    required double position                = 2;
+    required EncoderEvent event             = 3;
+    required EncoderErrorCode error_code    = 4;
+}
+
+message EncoderConfig {
+    required double offset                  = 1;
+    required bool send_periodically         = 2;
+    required uint32 send_period             = 3;
+    required bool send_on_high_limit        = 4;
+    required double high_limit              = 5;
+    required bool send_on_low_limit         = 6;
+    required double low_limit               = 7;
+    required bool send_on_zero_cross        = 8;
+}

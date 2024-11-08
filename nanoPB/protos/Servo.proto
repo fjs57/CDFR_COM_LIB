@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+message ServoById {
+    required uint32 servoID = 1;
+    required float position = 2;
+}
+
+message ServoEnable {
+    required bool enable = 1;
+}
+
+message ServoVoltage {
+    required float voltage = 1;
+}
+
+
+message ServoStatus {
+    repeated float positions = 1;
+}

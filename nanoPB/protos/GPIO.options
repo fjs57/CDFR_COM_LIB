@@ -1,0 +1,29 @@
+DigitalOutputStates.states                      max_count:4
+DigitalOutputStates.states                      fixed_count:true
+
+DigitalInputStates.states                       max_count:4
+DigitalInputStates.states                       fixed_count:true
+
+AnalogInputStates.states                        max_count:4
+AnalogInputStates.states                        fixed_count:true
+
+AnalogInputStates.hysteresis_state              max_count:4
+AnalogInputStates.hysteresis_state              fixed_count:true
+
+DigitalInputConfig.send_on_change               max_count:4
+DigitalInputConfig.send_on_change               fixed_count:true
+
+AnalogInputConfig.offset                        max_count:4
+AnalogInputConfig.offset                        fixed_count:true
+
+AnalogInputConfig.scale                         max_count:4
+AnalogInputConfig.scale                         fixed_count:true
+
+AnalogInputConfig.send_hysteresis_state         max_count:4
+AnalogInputConfig.send_hysteresis_state         fixed_count:true
+
+AnalogInputConfig.hysteresis_high               max_count:4
+AnalogInputConfig.hysteresis_high               fixed_count:true
+
+AnalogInputConfig.hysteresis_low                max_count:4
+AnalogInputConfig.hysteresis_low                fixed_count:true

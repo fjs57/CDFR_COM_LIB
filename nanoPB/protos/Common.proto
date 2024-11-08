@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+enum BoardErrorCode {
+    NO_ERROR = 0;
+    GENERIC_ERROR = 1;
+}
+
+message BoardStatus {
+    required uint32 board_timestamp     = 1;
+    required float temperature          = 2;
+    required BoardErrorCode error_code  = 3;
+    required uint32 firmware_version    = 4;
+}
+
+message WatchdogConfig {
+    required bool enabled               = 1;
+    required uint32 timeout             = 2;
+}
+
+message WatchdogStatus {
+    required bool state                 = 1;
+    required uint32 last_ping_timestamp = 2;
+    required uint32 last_ping_period    = 3;
+    required uint32 max_period          = 4;
+}
+
+message EmergencyStop {
+    required bool state                 = 1;
+}
