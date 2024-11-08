@@ -11,6 +11,10 @@
 #include <stdio.h> // used by the TF_Error() macro defined below
 //#include <esp8266.h> // when using with esphttpd
 
+#ifndef STM32
+#define RPI
+#endif
+
 //----------------------------- FRAME FORMAT ---------------------------------
 // The format can be adjusted to fit your particular application needs
 
@@ -72,13 +76,26 @@ typedef uint8_t TF_COUNT;
 
 // Whether to use mutex - requires you to implement TF_ClaimTx() and TF_ReleaseTx()
 // --------->  defined in config implementations
-// #define TF_USE_MUTEX  1
+
+#ifdef STM32
+#define TF_USE_MUTEX  0
+#endif
+
+#ifdef RPI
+#define TF_USE_MUTEX  1
+#endif
 
 // Error reporting function. To disable debug, change to empty define
 // defined in config implementations
 // --------->  defined in config implementations
 // #define TF_Error(format, ...) printf("[TF] " format "\n", ##__VA_ARGS__)
- #define TF_Error(format, ...)
+#ifdef STM32
+#define TF_Error(format, ...)
+#endif
+
+#ifdef RPI
+#define TF_Error(format, ...)
+#endif
 
 
 //------------------------- End of user config ------------------------------
